@@ -4,14 +4,14 @@ const privateKey = config.get<string>('privateKey');
 const publicKey = config.get<string>('publicKey');
 
 function signJwt(object: Object, options?: jwt.SignOptions | undefined) {
-	return jwt.sign({ id: '1234' }, privateKey, {
+	return jwt.sign({ id: object }, privateKey, {
 		...(options && options),
 		// algorithm: 'RS256',
 	})
 }
 function verifyJwt(token: string) {
 	try {
-		const decoded = jwt.verify(token, publicKey);
+		const decoded = jwt.verify(token, privateKey);
 		return {
 			valid: true,
 			expired: false,
