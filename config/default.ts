@@ -1,10 +1,11 @@
 export default {
-	port: 3000,
+	port: 3001,
 	dbUri: "mongodb://localhost:27017/rest-api-test",
 	saltWorkFactor: 10,
 	accessTokenTtl: "15m",
 	refreshTokenTtl: "1y",
-	publicKey: `-----BEGIN RSA PRIVATE KEY-----MIIEpAIBAAKCAQEAtSD9g88LBhMI3h9HJO9C/NKJzlnvXUm2N+Zv5Z1EI7BebpLh
+	publicKey: `-----BEGIN RSA PRIVATE KEY-----
+	MIIEpAIBAAKCAQEAtSD9g88LBhMI3h9HJO9C/NKJzlnvXUm2N+Zv5Z1EI7BebpLh
 QNHw1aIPpJ1xaPQn/kZftBGS32wftKAfaqKw09YcVc5OI8pTTVEFZZ7Qdsq2hF0E
 Eo0OaEjfx2yxP617n7XrOUEV+qgtMqYYgZ5sa2p2laBIhunQEeGczcXCXgMk4WsL
 Ky4ILitlBFGIVKIHrjGQCODmNjtS22LXv1zXdNoic1krBoF7xcvNtoTbWur5n4z3
@@ -28,8 +29,10 @@ Y8KhycRAv/EySrkUdJU2Z/1nDTCrTl3Wlhv788nuN1k+s7sOyOCBmxitDe6bj4WI
 RaoiYrY2TuNhSjeByPO0t/5MB46gMZp6kvR1Lyy6ztH+99jQwa4FZUfq+keknuPZ
 EuGdrQKBgQC4N1txo3OREGFeJEhYOiNIwCTrDiKwRaGg+WcXBejG8tzeDHBrbuzd
 lPswyjO4n+/dd2snHwvdMRCwuJwkIgCDhPlXt4zy3XuJ1pHq2RuUfgWHdLRhh00M
-ykJi6inRPazXUv4HVDxD+OgsvDVLjeJaFSjCuLjLRH/sv3fecWXCBw==-----END RSA PRIVATE KEY-----`,
-	privateKey: `-----BEGIN RSA PRIVATE KEY-----MIIEpQIBAAKCAQEAvdIrs+a0755fNTsbTn03LlkNlZCddXJ4wt/dIfprU8qgHRcX
+ykJi6inRPazXUv4HVDxD+OgsvDVLjeJaFSjCuLjLRH/sv3fecWXCBw==
+-----END RSA PRIVATE KEY-----`,
+	privateKey: `-----BEGIN RSA PRIVATE KEY-----
+	MIIEpQIBAAKCAQEAvdIrs+a0755fNTsbTn03LlkNlZCddXJ4wt/dIfprU8qgHRcX
 uc9bGc1Itlk6jINbqhqIgYapa6AgQFF+CMTfNwSyTJGZ8+1gxY5bogtF/JIILzQy
 uwzCRZ91e8QxB5zwPTwSJ8vYfeypg+LOLXfdvGCGJMVle+j8/K8XbHacD4uUKbyB
 pa1JtRzvyAQnzbuLHoZX8YAI1cafsO7SqkoViAnJaBWrNKtLAeDU9WYUL0hlduup
@@ -53,5 +56,6 @@ DpXIv94g5Inn/oUl+DWG65ALD84g75pLrOA/0q8gdP8qW883yTIqJ6JEevCLj6rB
 UOO2XUgHLICc1eiZve4/jlT7ibJ7toO/E3IXEK9SdXlPsBhod/EoSonU/ddoV5+4
 KI9uf80CgYEAnX48bKTmLeU5JTMqbjrirLLoJcI2hS7PDbcHPkK+Vdvyw5hWskQ+
 coQQFGZu4QHRvUzNxv8/JloKq0XHvCMNluY1QXyTufvB1DGG1zsHADFLMAAvDP32
-0Fq2caIkSompVFB0yRvChcCdyS1uhDAhTc9AThLXNyc95rJrrp7/yZQ=-----END RSA PRIVATE KEY-----`
+0Fq2caIkSompVFB0yRvChcCdyS1uhDAhTc9AThLXNyc95rJrrp7/yZQ=
+-----END RSA PRIVATE KEY-----`
 }

@@ -1,4 +1,3 @@
-import express from 'express';
 import config from "config"
 import connect from './utils/connect';
 import createServer from './utils/server';
@@ -12,3 +11,5 @@ app.listen(port, async () => {
 	await connect();
 	console.log(`app is running on http://localhost:${port}`);
 });
+ 
+export default app;

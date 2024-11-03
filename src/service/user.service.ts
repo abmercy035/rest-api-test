@@ -5,12 +5,14 @@ import UserModel from "../model/user.model"
 import { comparePassword, hashPassword } from "../utils/auth.bcrypt";
 import { FilterQuery } from 'mongoose';
 import SessionModel from '../model/sessions.model';
+import { signJwt, verifyJwt } from '../utils/jwt.utils';
+import log from '../utils/logger';
 
 
 export async function createUser(input: Omit<UserInterface, 'createdAt' | 'updatedAt'>) {
 	try {
 		const user = await UserModel.create(input)
-		const { password, ...rest } = user.toJSON();
+		log(user)
 		return omit(user.toJSON(), ["password"]);
 	}
 	catch (e: any) {
@@ -24,7 +26,7 @@ export async function validatePassword({ email, password }: { email: string, pas
 		return false;
 	}
 	else {
-		const isValid = await comparePassword(password)
+		const isValid = await comparePassword(password, user.password)
 		if (!isValid) return false;
 		return omit(user.toJSON(), ['password']);
 	}
@@ -33,14 +35,15 @@ export async function validatePassword({ email, password }: { email: string, pas
 export async function findUser(query: FilterQuery<UserInterface>) {
 	return await UserModel.findOne(query).lean()
 }
-
+export async function findAllUser(query?: any) {
+	return await UserModel.find(query).lean()
+}
+export async function updateUser(query: any, data: FilterQuery<UserInterface>) {
+	return await UserModel.findOneAndUpdate(query, data).lean()
+}
 export async function deleteUser(query: FilterQuery<UserInterface>) {
 	try {
-		const session = await SessionModel.findOne(query);
-		if (session && session.user) {
-			await UserModel.deleteOne({ _id: session.user });
-		}
-		return;
+		return await UserModel.findOneAndDelete(query).lean()
 	}
 	catch (e: any) {
 		throw new Error(e.message);
