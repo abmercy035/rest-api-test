@@ -20,6 +20,7 @@ function verifyJwt(token: string): {
 	decoded: JwtPayload | null;
 } {
 	try {
+
 		const decoded = jwt.verify(token, privateKey) as JwtPayload;
 		return {
 			valid: true,

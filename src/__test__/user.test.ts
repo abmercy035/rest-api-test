@@ -8,8 +8,6 @@ import * as SessionService from "../service/session.service";
 import log from "../utils/logger";
 import { MongoMemoryServer } from "mongodb-memory-server";
 import { createSessionHandler } from '../controller/session.controller';
-import { deleteUserHandler } from '../controller/user.controller';
-var alreadyRan = false;
 const app = createServer();
 const _id = new mongoose.Types.ObjectId().toString();
 const userId = new mongoose.Types.ObjectId().toString();
